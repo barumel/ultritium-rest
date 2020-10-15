@@ -4,7 +4,7 @@ const Handler = require('./Handler');
 const IdPropertyNotAllowedError = require('../../Error/IdPropertyNotAllowed');
 
 function PostHandler() {
-  const proto = Handler({ method: 'GET' });
+  const proto = Handler({ method: 'POST' });
 
   async function handle(req, res, next) {
     try {

@@ -48,7 +48,6 @@ function ServiceLoaderFileSystem(config) {
         throw new Error(`The definition for service with id ${definition.getServiceId()} is not valid!`);
       }
 
-
       const service = Service(definition);
 
       // To be implemented: Register custom handler here. Check the service folder for a handler folder an use add / replace handler on service instance

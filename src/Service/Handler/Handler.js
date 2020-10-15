@@ -1,8 +1,8 @@
 const { get } = require('lodash');
 
 function Handler(props) {
-  function handle(req, res, next) {
-    next(req, res);
+  async function handle(req, res, next) {
+    return next();
   }
 
   function getMethod() {

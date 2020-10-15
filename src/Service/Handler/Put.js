@@ -1,7 +1,7 @@
 const Handler = require('./Handler');
 
 function PutHandler() {
-  const proto = Handler({ method: 'GET' });
+  const proto = Handler({ method: 'PUT' });
 
   async function handle(req, res, next) {
     try {

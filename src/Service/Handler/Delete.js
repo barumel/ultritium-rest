@@ -1,7 +1,7 @@
 const Handler = require('./Handler');
 
 function DeleteHandler() {
-  const proto = Handler({ method: 'GET' });
+  const proto = Handler({ method: 'DELETE' });
 
   async function handle(req, res, next) {
     try {
