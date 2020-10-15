@@ -38,7 +38,7 @@ describe('Test definition factory', () => {
         },
         methods: {
           '1': {
-            isSupportedHttpMethod: {
+            isSupportedMethod: {
               valid: false,
               item: 'FOO',
               args: [],

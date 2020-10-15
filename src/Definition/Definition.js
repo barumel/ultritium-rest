@@ -44,7 +44,7 @@ function Definition(definition = {}) {
           type: 'array',
           required: true,
           validations: {
-            isSupportedHttpMethod: []
+            isSupportedMethod: []
           }
         },
         collection: {
