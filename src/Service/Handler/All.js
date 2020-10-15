@@ -1,15 +1,14 @@
 const Handler = require('./Handler');
 
-function GetHandler() {
-  const proto = Handler({ method: 'GET' });
+function AllHandler() {
+  const proto = Handler({ method: 'ALL' });
 
   async function handle(req, res, next) {
     try {
-      const id = req.params.id;
       const service = this.getService();
       const Model = service.getModel();
 
-      const result = await Model.findById(id);
+      const result = await Model.find();
 
       res.locals.result = result;
 
@@ -25,4 +24,4 @@ function GetHandler() {
   });
 }
 
-module.exports = GetHandler;
+module.exports = AllHandler;

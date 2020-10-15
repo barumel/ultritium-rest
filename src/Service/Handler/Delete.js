@@ -1,6 +1,6 @@
 const Handler = require('./Handler');
 
-function GetHandler() {
+function DeleteHandler() {
   const proto = Handler({ method: 'GET' });
 
   async function handle(req, res, next) {
@@ -9,7 +9,7 @@ function GetHandler() {
       const service = this.getService();
       const Model = service.getModel();
 
-      const result = await Model.findById(id);
+      const result = await Model.remove({ _id: id });
 
       res.locals.result = result;
 
@@ -25,4 +25,4 @@ function GetHandler() {
   });
 }
 
-module.exports = GetHandler;
+module.exports = DeleteHandler;

@@ -1,6 +1,6 @@
 const { isArray, isString, every } = require('lodash');
 
-const supported = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
+const supported = ['ALL', 'GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
 
 function isSupportedMethod(value) {
   if (!isString(value) && !isArray(value)) return false;
