@@ -7,7 +7,7 @@ const Service = require('../../src/Service/Service');
 
 describe('Test service factory', () => {
   describe('Test getModel function', () => {
-    it('Must return a mongoose schema based on the given definition', () => {
+    it('Must return a mongoose model based on the given definition', () => {
       const d = {
         id: 'foo',
         uri: '/foo/bar',
