@@ -26,8 +26,8 @@ function Fields(definition = {}) {
     return map(fields, func);
   }
 
-  function reduceFields(func) {
-    return reduce(fields, func);
+  function reduceFields(func, result = {}) {
+    return reduce(fields, func, result);
   }
 
   return Object.freeze({

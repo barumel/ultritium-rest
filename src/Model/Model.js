@@ -19,7 +19,7 @@ function Model(definition) {
   const fields = definition
     .getFields()
     .reduce((result, field, id) => {
-      result[id] = get(typeMap, field.type, 'string');
+      result[id] = get(typeMap, field.getType(), 'string');
 
       return result;
     }, {});
