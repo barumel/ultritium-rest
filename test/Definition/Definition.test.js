@@ -8,6 +8,7 @@ describe('Test definition factory', () => {
   describe('Test validate function', () => {
     it('Must return validation errors', () => {
       const definiton = {
+        id: 'foo',
         methods: ['GET', 'FOO'],
         fields: {
           id: {
@@ -54,6 +55,7 @@ describe('Test definition factory', () => {
 
     it('Must not return validation errors', () => {
       const definiton = {
+        id: 'foo',
         uri: '/foo/bar',
         methods: ['GET'],
         fields: {

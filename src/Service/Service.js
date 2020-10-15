@@ -1,8 +1,6 @@
-const Definition = require('../Definition/Definition');
 
-function Service(serviceDefinition) {
-  const definition = Definition(serviceDefinition);
 
+function Service(definition) {
   function getDefinition() {
     return definition;
   }

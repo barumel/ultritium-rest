@@ -1,3 +1,5 @@
 {
-  uri: "/foo/bar"
+  "id": "main",
+  "uri": "/foo/bar",
+  "methods": ["GET", "POST"]
 }

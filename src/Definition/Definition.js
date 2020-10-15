@@ -10,6 +10,10 @@ function Definition(definition = {}) {
     return get(definition, 'uri', '');
   }
 
+  function getServiceId() {
+    return get(definition, 'id');
+  }
+
   function getMethods() {
     return get(definition, 'methods', []);
   }
@@ -17,6 +21,10 @@ function Definition(definition = {}) {
   function validate() {
     const validations = {
       validations: {
+        id: {
+          type: 'string',
+          required: true
+        },
         uri: {
           type: 'string',
           required: true,
@@ -46,6 +54,7 @@ function Definition(definition = {}) {
 
 
   return Object.freeze({
+    getServiceId,
     getUri,
     getMethods,
     validate
