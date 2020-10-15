@@ -1,4 +1,4 @@
-const { isArray } = require('lodash');
+const { isArray } = require('lodash');
 
 function isArrayValidation(value) {
   return isArray(value);

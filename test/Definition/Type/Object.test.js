@@ -26,8 +26,7 @@ describe('Test type email factory', () => {
       required: { type: 'boolean', required: false },
       validations: {
         type: 'object',
-        required: false,
-        validations: { isPlainObject: [] }
+        required: false
       },
       default: {
         type: 'object',

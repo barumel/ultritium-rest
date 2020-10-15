@@ -20,10 +20,7 @@ function Type(definition = {}) {
       },
       validations: {
         type: 'object',
-        required: false,
-        validations: {
-          isPlainObject: []
-        }
+        required: false
       }
     };
   }

@@ -19,11 +19,17 @@ function Definition(definition = {}) {
       validations: {
         uri: {
           type: 'string',
-          required: true
+          required: true,
+          validations: {
+            isURL: [{ require_protocol: false, require_host: false }]
+          }
         },
         methods: {
           type: 'array',
-          required: true
+          required: true,
+          validations: {
+            isSupportedHttpMethod: []
+          }
         },
         fields: {
           type: 'object',
@@ -31,7 +37,7 @@ function Definition(definition = {}) {
           validations: fields.getDefinitionValidations()
         }
       }
-    }
+    };
 
     const result = validator.validate(validations, definition);
 

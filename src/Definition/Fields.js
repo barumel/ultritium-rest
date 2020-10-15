@@ -19,7 +19,7 @@ function Fields(definition = {}) {
       result[id] = { type: 'object', validations: field.getDefinitionValidations() };
 
       return result;
-    })
+    }, {});
   }
 
   return Object.freeze({

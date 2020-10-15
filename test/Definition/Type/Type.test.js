@@ -18,10 +18,7 @@ describe('Test type proto factory', () => {
       },
       validations: {
         type: 'object',
-        required: false,
-        validations: {
-          isPlainObject: []
-        }
+        required: false
       }
     };
 
