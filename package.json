@@ -25,9 +25,9 @@
     "mongoose": "^5.10.8"
   },
   "devDependencies": {
-    "assertthat": "^5.2.1",
     "eslint": "^7.10.0",
     "eslint-config-es": "^3.24.2",
+    "expect": "^26.5.3",
     "mocha": "^8.1.3"
   }
 }

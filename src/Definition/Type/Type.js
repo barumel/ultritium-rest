@@ -1,4 +1,4 @@
-const { cloneDeep } = require('lodash');
+const { cloneDeep, get } = require('lodash');
 
 function Type(definition = {}) {
   function getDefinition() {
@@ -6,7 +6,26 @@ function Type(definition = {}) {
   }
 
   function getDefinitionValidations() {
-    return {};
+    return {
+      type: {
+        type: 'string',
+        required: true,
+        validations: {
+          isSupportedDefinitionType: []
+        }
+      },
+      required: {
+        type: 'boolean',
+        required: false
+      },
+      validations: {
+        type: 'object',
+        required: false,
+        validations: {
+          isPlainObject: []
+        }
+      }
+    };
   }
 
   function getType() {

@@ -1,4 +1,4 @@
-const { defaultsDeep, cloneDeep } = require('lodash');
+const { defaultsDeep } = require('lodash');
 
 const Type = require('./Type');
 
@@ -16,29 +16,12 @@ function TypeArray(props = {}) {
 
   function getDefinitionValidations() {
     return {
-      type: {
-        type: 'string',
-        required: true,
-        validations: {
-          isSupportedDefinitionType: []
-        }
-      },
-      required: {
-        type: 'boolean',
-        required: false
-      },
+      ...proto.getDefinitionValidations(),
       default: {
-        type: 'string',
+        type: 'array',
         required: false,
         validations: {
-          isString: []
-        }
-      },
-      validations: {
-        type: 'object',
-        required: false,
-        validations: {
-          isPlainObject: []
+          isArray: []
         }
       }
     }

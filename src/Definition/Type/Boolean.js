@@ -1,4 +1,4 @@
-const { defaultsDeep } = require('lodash');
+const { defaultsDeep } = require('lodash');
 
 const Type = require('./Type');
 
@@ -8,7 +8,7 @@ function TypeBoolean(props = {}) {
     required: false,
     default: undefined,
     validations: {
-      isAlphanumeric: []
+      isBoolean: []
     }
   };
 
@@ -16,29 +16,12 @@ function TypeBoolean(props = {}) {
 
   function getDefinitionValidations() {
     return {
-      type: {
-        type: 'string',
-        required: true,
-        validations: {
-          isSupportedDefinitionType: []
-        }
-      },
-      required: {
-        type: 'boolean',
-        required: false
-      },
+      ...proto.getDefinitionValidations(),
       default: {
         type: 'boolean',
         required: false,
         validations: {
           isBoolean: []
-        }
-      },
-      validations: {
-        type: 'object',
-        required: false,
-        validations: {
-          isPlainObject: []
         }
       }
     }
@@ -48,7 +31,7 @@ function TypeBoolean(props = {}) {
     ...proto,
     type: 'boolean',
     getDefinitionValidations
-  })
+  });
 }
 
 module.exports = TypeBoolean;
