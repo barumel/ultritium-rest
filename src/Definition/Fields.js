@@ -1,4 +1,4 @@
-const { get, reduce } = require('lodash');
+const { get, reduce, map } = require('lodash');
 
 const create = require('./Type/index');
 
@@ -22,9 +22,19 @@ function Fields(definition = {}) {
     }, {});
   }
 
+  function mapFields(func) {
+    return map(fields, func);
+  }
+
+  function reduceFields(func) {
+    return reduce(fields, func);
+  }
+
   return Object.freeze({
     getById,
-    getDefinitionValidations
+    getDefinitionValidations,
+    map: mapFields,
+    reduce: reduceFields
   });
 }
 

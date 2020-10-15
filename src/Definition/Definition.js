@@ -1,4 +1,4 @@
-const { get } = require('lodash');
+const { get, capitalize } = require('lodash');
 
 const validator = require('../Validator/Validator');
 const Fields = require('./Fields');
@@ -16,6 +16,14 @@ function Definition(definition = {}) {
 
   function getMethods() {
     return get(definition, 'methods', []);
+  }
+
+  function getFields() {
+    return fields;
+  }
+
+  function getCollectionName() {
+    return get(definition, 'collection', capitalize(get(definition, 'id')));
   }
 
   function validate() {
@@ -39,6 +47,10 @@ function Definition(definition = {}) {
             isSupportedHttpMethod: []
           }
         },
+        collection: {
+          type: 'string',
+          require: false
+        },
         fields: {
           type: 'object',
           require: 'true',
@@ -57,6 +69,8 @@ function Definition(definition = {}) {
     getServiceId,
     getUri,
     getMethods,
+    getFields,
+    getCollectionName,
     validate
   });
 }
