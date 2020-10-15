@@ -7,7 +7,7 @@ function Service(definition) {
   let model;
 
   const handlers = definition.getMethods()
-    .resuce((result, method) => {
+    .reduce((result, method) => {
       result[method] = createHandler(method);
 
       return result;

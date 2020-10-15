@@ -5,6 +5,7 @@ const { get, isArray, isString, flattenDeep, compact, isEmpty, reduce } = requir
 
 const Definition = require('../../Definition/Definition');
 const Service =  require('../Service');
+const serviceProvider = require('../Provider');
 
 function ServiceLoaderFileSystem(config) {
   let definitionPaths = get(config, 'path', []);
@@ -41,18 +42,20 @@ function ServiceLoaderFileSystem(config) {
 
     return reduce(definitions, (result, d) => {
       const definition = Definition(fs.readJsonSync(d));
+      const serviceId = definition.getServiceId();
 
       const validationResult = definition.validate();
       if (!isEmpty(validationResult)) {
         console.log(util.inspect(validationResult, false, null, true))
-        throw new Error(`The definition for service with id ${definition.getServiceId()} is not valid!`);
+        throw new Error(`The definition for service with id ${serviceId} is not valid!`);
       }
 
       const service = Service(definition);
 
       // To be implemented: Register custom handler here. Check the service folder for a handler folder an use add / replace handler on service instance
 
-      result[definition.getServiceId()] = service;
+      result[serviceId] = service;
+      serviceProvider.registerService(serviceId, service);
 
       return result;
     }, {});
