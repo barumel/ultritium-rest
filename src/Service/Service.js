@@ -1,4 +1,6 @@
+const { isUndefined } = require('lodash');
 
+const Model = require('../Model/Model');
 
 function Service(definition) {
   let model;
@@ -8,6 +10,8 @@ function Service(definition) {
   }
 
   function getModel() {
+    if (isUndefined(model)) model = Model(definition);
+    
     return model;
   }
 
